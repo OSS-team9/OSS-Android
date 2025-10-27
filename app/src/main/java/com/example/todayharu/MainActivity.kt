@@ -29,9 +29,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             TodayHaruTheme {
 
+                val context = LocalContext.current.applicationContext
+
                 val viewModel: CameraViewModel = viewModel(
                     factory = CameraViewModelFactory(
-                        CameraRepository(LocalContext.current.applicationContext)
+                        CameraRepository(context),
+                        context
                     )
                 )
 
@@ -51,7 +54,9 @@ class MainActivity : ComponentActivity() {
                     } else {
                         ImagePreviewScreen(
                             imageUri = previewImageUri!!,
+                            viewModel = viewModel,
                             onDismiss = {
+                                viewModel.onPreviewDismissed()
                                 previewImageUri = null
                             }
                         )

@@ -62,4 +62,11 @@ dependencies {
 
     //viewmodel
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    // ML Kit 얼굴 메시 감지
+    implementation(libs.face.mesh.detection)
+    implementation(libs.vision.common)
+
+    // 코루틴
+    implementation(libs.kotlinx.coroutines.play.services)
 }
