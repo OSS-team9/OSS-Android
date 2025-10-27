@@ -1,4 +1,4 @@
-package com.example.todayharu.ui.home;
+package com.example.todayharu.ui.home
 
-public class HomeScreen {
+class HomeScreen {
 }
