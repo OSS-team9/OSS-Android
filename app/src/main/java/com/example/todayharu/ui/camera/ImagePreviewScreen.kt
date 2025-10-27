@@ -30,7 +30,7 @@ fun ImagePreviewScreen(
     onDismiss: () -> Unit // 닫기 버튼 콜백
 ) {
     // 1. ViewModel에 프리뷰가 나타났음을 알림
-    LaunchedEffect(key1 = imageUri) {
+    LaunchedEffect(key1 = Unit) {
         viewModel.onPreviewAppeared(imageUri)
     }
 
